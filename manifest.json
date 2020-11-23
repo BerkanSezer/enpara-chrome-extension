@@ -1,0 +1,25 @@
+{
+	"name": "Enpara Chrome Extension",
+	"manifest_version": 2,
+	"description": "",
+	"version": "1.0",
+	"permissions": [
+		"activeTab"
+	],
+	"content_scripts": [{
+		"matches": ["http://*/", "https://*/"],
+		"js": ["content.js"],
+		"run_at": "document_end"
+	}],
+	"browser_action": {
+		"default_title": "",
+		"default_icon": "icon_128.png",
+		"default_popup": "popup.html"
+
+	},
+	"icons": {
+		"16": "icon_16.png",
+		"48": "icon_48.png",
+		"128": "icon_128.png"
+	}
+}

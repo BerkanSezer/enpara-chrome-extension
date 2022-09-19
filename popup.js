@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const htmlData = await httpGet();
-    const exchangeArr = htmlData.split('<div class="enpara-gold-exchange-rates__table-item">').slice(1);
-    exchangeArr[3] = exchangeArr[3].split('<div class')[0];
-    const domIds = ['#usd', '#eur', '#gold']
-    domIds.forEach((node, index) => {
-        document.querySelector(node).innerHTML = exchangeArr[index].split('</div>')[0].trim();
-    })
+    const regex = /(<div class="enpara-gold-exchange-rates__table-item).*?<\/div>/gm
+    const exchangeArr = htmlData.match(regex);
+    // const domIds = ['#usd']
+
+    // alert(exchangeArr);
+    // exchangeArr.forEach((node, index) => {
+        // document.querySelector(node).innerHTML = exchangeArr[index];
+        document.querySelector('#table').innerHTML += exchangeArr.join('').replace('Parite', '')
+    // })
 })
 
 //GET Request to API 

@@ -1,3 +1,6 @@
+![Enpara Chrome Extension](./enpara.png)
+
+
 # Enpara Chrome Extension
 You can follow QNB Enpara's Exchange-rate on your browser
 
